@@ -10,10 +10,8 @@ author_id = ""
 #times should be ceil( user messages count / 25 )
 times = 1916
 
-#1916
+#1916 is an arbitrary number. discord actually stops us at 200 pages, I think
 for i in range(1916):
-    if i < 11:
-        continue;
 
     print(i)
     resp = requests.get("https://discord.com/api/v9/guilds/"+guild_id+"/messages/search?author_id="+author_id+"&offset="+str(i*25), headers={"Authorization": os.getenv('token')})
